@@ -41,7 +41,7 @@ public class TestServiceImpl implements TestService {
     @Override
     public void mail() {
         for (User u:usersRepository.getall()) {
-            mailSender.send("Kickstarter: Лучие проекты за неделю для вас!!", "У нас 1 проект вы о чем вообще! Но зато есть анекдот", u.getLogin());
+            mailSender.send(mailSender.getGmailSession(),"Kickstarter: Лучие проекты за неделю для вас!!", "У нас 1 проект вы о чем вообще! Но зато есть анекдот", u.getLogin());
         }
     }
 }

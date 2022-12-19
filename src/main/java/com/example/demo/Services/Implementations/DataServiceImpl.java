@@ -100,9 +100,9 @@ public class DataServiceImpl implements DataService {
             e.printStackTrace();
         }
         if(response.getStatusLine().getStatusCode() == 200){
-            mailSender.send("Kickstarter", "Ваша карта работает нормально, можете не переживать!", p.getMail());
+            mailSender.send(mailSender.getGmailSession(),"Kickstarter", "Ваша карта работает нормально, можете не переживать!", p.getMail());
         }else{
-            mailSender.send("Kickstarter", "Ваша карта работает ненормально, можете переживать!", p.getMail());
+            mailSender.send(mailSender.getGmailSession(),"Kickstarter", "Ваша карта работает ненормально, можете переживать!", p.getMail());
         }
     }
 
