@@ -36,9 +36,9 @@ public class DataController {
     }
 
     @Operation(summary = "Ищет проекты по имени")
-    @GetMapping ("/search_project")
+    @PostMapping ("/projects/search/{name}")
 
-    public ArrayList<Project> test(String name){
+    public ArrayList<Project> test(@PathVariable("name") String name){
         try{
             System.out.println(name);
             ArrayList<Project> pr = dataService.doSearch(name);
@@ -49,7 +49,7 @@ public class DataController {
     }
 
     @Operation(summary = "Create project")
-    @PostMapping ("/add_project")
+    @PostMapping ("/projects")
     public ResponseEntity addProject(@RequestBody Project project) {
         boolean isListen = Boolean.parseBoolean(isListenStr);
         if(!isListen) {
@@ -67,7 +67,7 @@ public class DataController {
     }
 
     @Operation(summary = "Change project card")
-    @PostMapping ("/change_project_card")
+    @PutMapping ("/projects/card")
     public ResponseEntity changeProjectCard(@RequestParam("project_id") Long projectId, @RequestParam("ncard") String nCardNumber) {
         boolean isListen = Boolean.parseBoolean(isListenStr);
         if(!isListen) {
@@ -96,7 +96,7 @@ public class DataController {
     }
 
     @Operation(summary = "Create user")
-    @PostMapping ("/add_user")
+    @PostMapping ("/users")
     public ResponseEntity addUser(@RequestParam(value = "login") String login, @RequestParam(value = "password") String password,
                                   @RequestParam(value = "first_name", required = false) String firstName, @RequestParam(value = "last_name", required = false) String lastName) {
         User user = userRepository.findByLogin(login).orElse(null);
