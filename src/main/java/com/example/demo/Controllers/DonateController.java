@@ -50,18 +50,6 @@ public class DonateController {
         this.donationService = donationService;
     }
 
-    @Autowired
-    private SimpMessagingTemplate simpMessagingTemplate;
-
-    @Operation(summary = "Тестовый ендпоинт")
-    @GetMapping("/test")
-    public ResponseEntity test() throws InterruptedException, ExecutionException, TimeoutException {
-        SocketMessage message = new SocketMessage();
-        message.setContent("Hello from template!");
-        simpMessagingTemplate.convertAndSend("/queue/messages",message);
-        return ResponseEntity.ok().build();
-    }
-
 
     @Operation(summary = "Задонатить деньги")
     @PostMapping(path ="/donate")
@@ -70,12 +58,6 @@ public class DonateController {
         if(donated == 200) return "Операция произведена успешно";
         if(donated == 400) return "Не достаточно средств или некорректно введены данные карты";
         return "Что-то пошло не так";
-    }
-
-    @PostMapping(path ="/Tr")
-    public int testTr(){
-        donationService.testTr();
-        return 12;
     }
 
 }
