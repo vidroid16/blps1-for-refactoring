@@ -2,6 +2,39 @@
 асинхронного выполнения некоторых функций. Для связи между узлами используется очередь сообщений RabbitMQ. Присутствует функция периодической рассылки рекламных 
 электронных писем на базе планировщика задач Quartz.
 
-This educational project is a simulation of the Kickstarter application server. The server implements the possibility of distributed work and
-asynchronous execution of some functions. RabbitMQ message queue is used for the communication between nodes. Server also has a function of periodic mailing of advertising
-emails using the Quartz task scheduler. 
+## Cущности
+- User
+- Donation
+- Project
+
+## Functionality
+1. Зарегистрировать нового пользователя
+2. Авторизоваться под существующим пользователем
+3. Создать новый проект
+4. Изменить способ оплаты существущего проекта
+5. Задонатить на проект
+
+## Stack
+- Spring Framework 5
+- Java 8
+- Quartz
+- Bitronix
+- Junit
+
+## Дерево задач
+###### 1 спринт
+
+- Привести API к REST-овому виду
+- Разбить длиные методы на несколько нормальных
+- Вывести данные для авторизации в конфиг
+
+###### 2 спринт
+
+- Рефакторинг структуры проекта (правильно разбить классы по пакетам )
+- 
+
+###### 3 спринт
+
+- Написать модульные тесты к сервисам
+
+
