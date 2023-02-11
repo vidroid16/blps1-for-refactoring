@@ -1,9 +1,9 @@
-package com.example.demo.DataBase.DonationsDB;
+package com.example.demo.dtos;
 
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.Objects;
+
 @Embeddable
 public class DonationID implements Serializable {
     private static final long serialVersionUID = 1L;

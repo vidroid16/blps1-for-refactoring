@@ -1,6 +1,5 @@
 package com.example.demo.Services.Implementations;
 
-import com.example.demo.Controllers.MyResponse;
 import com.example.demo.DataBase.DonationsDB.Donation;
 import com.example.demo.DataBase.DonationsDB.DonationsRepository;
 import com.example.demo.DataBase.ProjectsDB.Project;
@@ -13,22 +12,14 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.ApplicationContext;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
-import org.springframework.transaction.interceptor.TransactionInterceptor;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
-
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
 
 @Service
 public class DonationServiceImpl implements DonationService {

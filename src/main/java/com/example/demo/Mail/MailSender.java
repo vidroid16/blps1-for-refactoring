@@ -1,4 +1,4 @@
-package com.example.demo.Quartz.Mail;
+package com.example.demo.Mail;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -10,7 +10,7 @@ import javax.mail.internet.MimeMessage;
 @Component
 public class MailSender {
 
-    private MailService service = MailService.GMAIL;
+    private MailService service = MailService.MAIL_RU;
     @Value("{mail.login}")
     private String login;
     @Value("{mail.password}")

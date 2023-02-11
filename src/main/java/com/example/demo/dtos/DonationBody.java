@@ -1,4 +1,4 @@
-package com.example.demo.DataBase.DonationsDB;
+package com.example.demo.dtos;
 
 import org.springframework.web.bind.annotation.RequestBody;
 

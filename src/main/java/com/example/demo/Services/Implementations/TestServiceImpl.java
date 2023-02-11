@@ -4,18 +4,9 @@ import com.example.demo.DataBase.ProjectsDB.Project;
 import com.example.demo.DataBase.ProjectsDB.ProjectRepository;
 import com.example.demo.DataBase.UsersDB.User;
 import com.example.demo.DataBase.UsersDB.UsersRepository;
-import com.example.demo.Quartz.Mail.MailSender;
+import com.example.demo.Mail.MailSender;
 import com.example.demo.Services.TestService;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.stereotype.Service;
 
 @Service

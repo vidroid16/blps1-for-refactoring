@@ -1,4 +1,4 @@
-package com.example.demo.Quartz.Mail;
+package com.example.demo.Mail;
 
 public enum MailService {
     GMAIL("smtp.gmail.com","587"),
