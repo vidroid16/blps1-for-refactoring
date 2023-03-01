@@ -6,9 +6,15 @@ import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBr
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 
+/**
+ * Классс конфигурация для WebSocket
+ * @author Шаля Андрей
+ * @version 2.0
+ */
 @Configuration
 @EnableWebSocketMessageBroker
 public class SocketConfiguration implements WebSocketMessageBrokerConfigurer {
+
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/websocketkick").setAllowedOrigins("*");

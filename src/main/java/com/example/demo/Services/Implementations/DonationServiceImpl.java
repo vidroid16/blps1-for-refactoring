@@ -21,6 +21,11 @@ import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
+/**
+ * Классс сервис для донатов
+ * @author Шаля Андрей
+ * @version 2.0
+ */
 @Service
 public class DonationServiceImpl implements DonationService {
     private final UsersRepository usersRepository;
@@ -43,6 +48,13 @@ public class DonationServiceImpl implements DonationService {
         this.transactionManager = transactionManager;
     }
 
+    /**
+     * Задонатить на проект
+     * @param login - логин донатера
+     * @param project_id - id проекта
+     * @param sum - сумма доната
+     * @param cardNumber - номер карты, с которой происходит донат
+     */
     @Override
     public int donate(String login, Long project_id, int sum, String cardNumber) {
         DefaultTransactionDefinition def = new DefaultTransactionDefinition();

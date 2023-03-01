@@ -15,12 +15,22 @@ import javax.sql.DataSource;
 import javax.transaction.TransactionManager;
 import java.util.Properties;
 
+
+/**
+ * Класс конфигурация для подключения к базе данных и для мененджера транзакций.
+ * @autor Шаля Андрей
+ * @version 2.0
+ */
 @Profile("default")
 @Configuration
 @EnableTransactionManagement
 public class LocalDB{
 
 
+    /**
+     * Инициализация бина {@link BitronixTransactionManager} для мененджера транзакций bitronix
+     * @return возвращает {@link BitronixTransactionManager}
+     */
     @Bean(name = "bitronixTransactionManager")
     @DependsOn
     public BitronixTransactionManager bitronixTransactionManager() throws Throwable {
@@ -31,11 +41,21 @@ public class LocalDB{
         //refactorsss
         return bitronixTransactionManager;
     }
+    /**
+     * Инициализация бина {@link PlatformTransactionManager} для мененджера транзакций bitronix.
+     * Для инициализации нужен бин {@link BitronixTransactionManager}
+     * @return возвращает {@link PlatformTransactionManager}
+     */
     @Bean(name = "transactionManager")
     @DependsOn({"bitronixTransactionManager"})
     public PlatformTransactionManager transactionManager(TransactionManager bitronixTransactionManager) throws Throwable {
         return new JtaTransactionManager(bitronixTransactionManager);
     }
+
+    /**
+     * Инициализация бина {@link DataSource} с кредами для подключения к БД.
+     * @return возвращает {@link PoolingDataSource} implemented {@link DataSource}
+     */
     @Bean(name = "primaryPgDataSource")
     @Primary
     public DataSource primaryMySqlDataSource() {

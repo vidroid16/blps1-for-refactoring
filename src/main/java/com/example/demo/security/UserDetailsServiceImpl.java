@@ -8,6 +8,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+/**
+ * Класс для представления пользователя {@link User} в контексте Spring Security {@link SecurityUser}
+ * @author Шаля Андрей
+ * @version 2.0
+ */
 @Service("userDetailsServiceImpl")
 public class UserDetailsServiceImpl implements UserDetailsService {
 
@@ -18,6 +23,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         this.userRepository = userRepository;
     }
 
+    /**
+     * Функция ищет пользователя в БД по нику и создает пользователя {@link SecurityUser}
+     * @param username
+     * @return пользователя {@link SecurityUser}
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByLogin(username).orElseThrow(() ->

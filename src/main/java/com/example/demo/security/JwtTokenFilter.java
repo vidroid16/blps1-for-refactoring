@@ -13,6 +13,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Класс фильтр для отлова неаунтифицированных пользователей
+ * @autor Шаля Андрей
+ * @version 2.0
+ */
 @Component
 public class JwtTokenFilter extends GenericFilterBean {
     private final JwtTokenProvider jwtTokenProvider;

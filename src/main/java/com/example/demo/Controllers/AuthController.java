@@ -22,6 +22,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Класс контроллер для авторизации.
+ * @autor Шаля Андрей
+ * @version 2.0
+ */
 @RestController
 @RequestMapping("auth")
 public class AuthController {

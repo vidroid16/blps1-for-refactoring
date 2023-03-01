@@ -6,6 +6,7 @@ import com.example.demo.DataBase.UsersDB.User;
 import com.example.demo.DataBase.UsersDB.UsersRepository;
 import com.example.demo.Mail.MailSender;
 import com.example.demo.Services.DataService;
+import com.example.demo.security.SecurityUser;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
@@ -26,6 +27,12 @@ import javax.persistence.PersistenceContext;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+
+/**
+ * Класс сервис для представления пользователя {@link User} в контексте Spring Security {@link SecurityUser}
+ * @author Шаля Андрей
+ * @version 2.0
+ */
 @Service
 public class DataServiceImpl implements DataService {
     private final ProjectRepository projectRepository;
@@ -47,21 +54,36 @@ public class DataServiceImpl implements DataService {
     }
     @PersistenceContext
     private EntityManager entityManager;
+
+    /**
+     * Функция сохранения нового пользователя
+     */
     @Override
     public void addUser(User user) {
         usersRepository.save(user);
     }
 
+    /**
+     * Функция возвращает всех пользователей
+     */
     @Override
     public ArrayList<User> listUsers() {
         return (ArrayList<User>) usersRepository.findAll();
     }
 
+    /**
+     * Функция сохранения нового проекта
+     */
     @Override
     public void addProject(Project project) {
         projectRepository.save(project);
     }
 
+    /**
+     * Функция смены карты на которую поступают донаты на проект
+     * @param nCardNum номер карты
+     * @param projectId id проекта
+     */
     @Override
     public void changeProjectCard(Long projectId, String nCardNum) {
         DefaultTransactionDefinition def = new DefaultTransactionDefinition();
@@ -77,6 +99,10 @@ public class DataServiceImpl implements DataService {
         transactionManager.commit(status);
     }
 
+    /**
+     * Функция проверки карты привязанной к проекту на возможность зачичлений
+     * @param id - id проекта
+     */
     @Override
     public void moderate(Long id) {
         HttpPost post = new HttpPost("http://localhost:" + this.bankServerPort + "/bank/moderate");
@@ -104,6 +130,11 @@ public class DataServiceImpl implements DataService {
         }
     }
 
+    /**
+     * Функция получения всех проектов содержащих строку
+     * @param name строка для поиска
+     * @return возвращает массив {@link Project}
+     */
     @Override
     public ArrayList<Project> doSearch(String name) {
         ArrayList<Project> pr = projectRepository.findAllByNameContaining(name);

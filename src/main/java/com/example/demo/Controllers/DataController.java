@@ -20,6 +20,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
+/**
+ * Класс контроллер для работы с проектами и данными пользователей.
+ * @autor Шаля Андрей
+ * @version 2.0
+ */
 @RestController
 public class DataController {
     private final DataServiceImpl dataService;

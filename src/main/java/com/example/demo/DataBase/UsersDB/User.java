@@ -11,26 +11,44 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
+
+/**
+ * Модель данных пользователей.
+ * @autor Шаля Андрей
+ * @version 2.0
+ */
 @Entity
 @JsonIgnoreProperties("password")
 @Table(name = "blps_users")
 public class User {
 
+    /** Поле ID */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    /** Логин для входа, он же почта */
     @Column(name = "login")
     private String login;
+
+    /** Логин для входа, он же почта */
     @Column(name = "password")
     private String password;
+
+    /** Имя */
     @Column(name = "first_name")
     private String firstName;
+
+    /** Фамилия */
     @Column(name = "last_name")
     private String lastName;
+
+    /** Роль пользователя в системе безопасности приложения*/
     @Enumerated(value = EnumType.STRING)
     @Column(name = "role")
     private Role role;
+
+    /** Статус активности пользователя */
     @Enumerated(value = EnumType.STRING)
     @Column(name = "status")
     private Status status;

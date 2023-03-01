@@ -41,6 +41,11 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+/**
+ * Класс контроллер для отправления донатов.
+ * @autor Шаля Андрей
+ * @version 2.0
+ */
 @RestController
 public class DonateController {
     private final DonationServiceImpl donationService;

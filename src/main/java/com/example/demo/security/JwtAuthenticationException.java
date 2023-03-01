@@ -4,6 +4,11 @@ import lombok.Getter;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;
 
+/**
+ * Ошибка аунтифекации
+ * @autor Шаля Андрей
+ * @version 2.0
+ */
 @Getter
 public class JwtAuthenticationException extends AuthenticationException {
     private HttpStatus httpStatus;

@@ -15,6 +15,11 @@ import javax.sql.DataSource;
 import java.util.Calendar;
 import java.util.Properties;
 
+/**
+ * Класс конфигурация планировщика задач Quartz.
+ * @autor Шаля Андрей
+ * @version 2.0
+ */
 @Slf4j
 @Configuration
 public class QuartzConfig {

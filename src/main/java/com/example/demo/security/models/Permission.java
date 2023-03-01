@@ -1,5 +1,10 @@
 package com.example.demo.security.models;
 
+/**
+ * Перечисления прав доступа к системе
+ * @autor Шаля Андрей
+ * @version 2.0
+ */
 public enum Permission {
     PROJECT_CREATE("projects:create"),
     PROJECT_FIND("project:find"),

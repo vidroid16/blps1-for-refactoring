@@ -7,6 +7,11 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/**
+ * Перечисление ролей пользователя
+ * @autor Шаля Андрей
+ * @version 2.0
+ */
 public enum Role {
     USER(new HashSet<>(Arrays.asList(Permission.PROJECT_CREATE, Permission.PROJECT_FIND, Permission.KICK_STARTER_DONATE))),
     ADMIN(new HashSet<>(Arrays.asList(Permission.PROJECT_CREATE, Permission.PROJECT_FIND, Permission.KICK_STARTER_DONATE, Permission.USERS_CREATE, Permission.USERS_LIST)));

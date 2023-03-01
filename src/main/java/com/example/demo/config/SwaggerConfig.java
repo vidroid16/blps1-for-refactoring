@@ -10,6 +10,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.util.StringUtils;
 
+/**
+ * Класс конфигурации Swagger Api.
+ * @autor Шаля Андрей
+ * @version 2.0
+ */
 @Configuration
 public class SwaggerConfig {
 

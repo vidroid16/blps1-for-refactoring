@@ -8,7 +8,11 @@ import javax.servlet.http.HttpFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+/**
+ * Классс CORS фильтр
+ * @author Шаля Андрей
+ * @version 2.0
+ */
 @Component
 public class MyFilter extends HttpFilter {
     public void init(FilterConfig config) throws ServletException{}

@@ -6,16 +6,28 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Модель данных проектов.
+ * @autor Шаля Андрей
+ * @version 2.0
+ */
 @Entity
 public class Project {
+        /** Поле ID */
         @Id
         @GeneratedValue
         private Long id;
+        /** Имя проекта */
         private String name;
+        /** Требумая сумма для сбора */
         private int need_sum;
+        /** Текущая сумма всех донатов*/
         private int cur_sum;
+        /** Проверка привязанной карты на доступность. Проверена - 1, Не проверена - 0 */
         private int checked;
+        /** Номер карты на которую поступают донаты */
         private String card;
+        /** Почта автора проекта */
         private String mail;
 
         public Project(){
@@ -94,10 +106,6 @@ public class Project {
         public void setCur_sum(int cur_sum) {
                 this.cur_sum = cur_sum;
         }
-        //        @ManyToMany
-//        @JoinTable(name = "donations",
-//                joinColumns = { @JoinColumn(name = "project_id") },
-//                inverseJoinColumns = { @JoinColumn(name = "user_id") })
-//        private Set<User> users = new HashSet<User>();
+
 
 }

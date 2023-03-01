@@ -9,6 +9,13 @@ import com.example.demo.Services.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.mail.Session;
+
+/**
+ * Классс сервис для рассылки рекламных писем
+ * @author Шаля Андрей
+ * @version 2.0
+ */
 @Service
 public class TestServiceImpl implements TestService {
     @Autowired
@@ -29,6 +36,9 @@ public class TestServiceImpl implements TestService {
         projectRepository.save(new Project("TestShit", 1337, 228));
     }
 
+    /**
+     * Отправить рекламное предложение всем пользователям в БД. Используется метод {@link MailSender#send(Session, String, String, String)}
+     */
     @Override
     public void mail() {
         for (User u:usersRepository.getall()) {

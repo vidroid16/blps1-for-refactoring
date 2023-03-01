@@ -10,6 +10,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * Класс пользователя в рамках контекста Spring Security
+ * @author Шаля Андрей
+ * @version 2.0
+ */
 @Data
 public class SecurityUser implements UserDetails {
 

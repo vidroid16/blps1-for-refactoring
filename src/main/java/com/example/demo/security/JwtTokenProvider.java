@@ -11,12 +11,18 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import javax.mail.Session;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Base64;
 import java.util.Date;
 
 import static org.springframework.util.StringUtils.hasText;
 
+/**
+ * Класс с набором методов для реализации JWT аунтификации
+ * @autor Шаля Андрей
+ * @version 2.0
+ */
 @Component
 public class JwtTokenProvider {
 
@@ -38,6 +44,12 @@ public class JwtTokenProvider {
         secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
     }
 
+    /**
+     * Создание токена для пользовательской сессии
+     * @param username имя пользователя
+     * @param role сроковое представление роли {@link com.example.demo.security.models.Role}
+     * @return Строку токена
+     */
     public String createToken(String username, String role) {
         Claims claims = Jwts.claims().setSubject(username);
         claims.put("role", role);
@@ -52,6 +64,10 @@ public class JwtTokenProvider {
                 .compact();
     }
 
+    /**
+     * Проверка токена на валидность
+     * @param token токен
+     */
     public boolean validateToken(String token) {
         try {
             Jws<Claims> claimsJws = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token);
@@ -60,6 +76,7 @@ public class JwtTokenProvider {
             throw new JwtAuthenticationException("JWT token is expired or invalid", HttpStatus.UNAUTHORIZED);
         }
     }
+
 
     public Authentication getAuthentication(String token) {
         UserDetails userDetails = this.userDetailsService.loadUserByUsername(getUsername(token));

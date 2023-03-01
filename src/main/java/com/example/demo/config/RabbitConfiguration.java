@@ -13,6 +13,11 @@ import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Классс конфигурация для очереди сообщений RabbitMQ
+ * @author Шаля Андрей
+ * @version 2.0
+ */
 @Configuration
 public class RabbitConfiguration {
     //настраиваем соединение с RabbitMQ

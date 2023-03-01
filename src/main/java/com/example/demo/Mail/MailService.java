@@ -1,5 +1,10 @@
 package com.example.demo.Mail;
 
+/**
+ * Enum с парами host-port для основных почтовых сервисов. Протокол передачи письем SMTP.
+ * @autor Шаля Андрей
+ * @version 2.0
+ */
 public enum MailService {
     GMAIL("smtp.gmail.com","587"),
     OUTLOOK("SMTP.Office365.com","587"),
