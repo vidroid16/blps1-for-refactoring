@@ -24,10 +24,8 @@ import java.util.Properties;
 @Configuration
 public class QuartzConfig {
     private ApplicationContext applicationContext;
-    // private DataSource dataSource;
     public QuartzConfig(ApplicationContext applicationContext, DataSource dataSource) {
         this.applicationContext = applicationContext;
-        //this.dataSource = dataSource;
     }
 
     @Bean
@@ -46,7 +44,6 @@ public class QuartzConfig {
         schedulerFactory.setOverwriteExistingJobs(true);
         schedulerFactory.setAutoStartup(true);
         schedulerFactory.setQuartzProperties(properties);
-        //schedulerFactory.setDataSource(dataSource);
         schedulerFactory.setJobFactory(springBeanJobFactory());
         schedulerFactory.setWaitForJobsToCompleteOnShutdown(true);
         if (ArrayUtils.isNotEmpty(triggers)) {
@@ -68,7 +65,6 @@ public class QuartzConfig {
 
     static CronTriggerFactoryBean createCronTrigger(JobDetail jobDetail, String cronExpression, String triggerName) {
         log.debug("createCronTrigger(jobDetail={}, cronExpression={}, triggerName={})", jobDetail.toString(), cronExpression, triggerName);
-        // To fix an issue with time-based cron jobs
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MILLISECOND, 0);

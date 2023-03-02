@@ -1,6 +1,5 @@
 package com.example.demo.config;
 
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.*;
@@ -15,7 +14,7 @@ import java.io.IOException;
  */
 @Component
 public class MyFilter extends HttpFilter {
-    public void init(FilterConfig config) throws ServletException{}
+    public void init(FilterConfig config){}
 
     @Override
     public void doFilter(HttpServletRequest servletRequest, HttpServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {

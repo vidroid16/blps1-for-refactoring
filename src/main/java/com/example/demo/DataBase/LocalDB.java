@@ -2,11 +2,7 @@ package com.example.demo.DataBase;
 import bitronix.tm.BitronixTransactionManager;
 import bitronix.tm.TransactionManagerServices;
 import bitronix.tm.resource.jdbc.PoolingDataSource;
-import com.example.demo.DataBase.UsersDB.User;
-import org.springframework.boot.jdbc.DataSourceBuilder;
-import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.*;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.jta.JtaTransactionManager;
@@ -38,7 +34,6 @@ public class LocalDB{
         bitronixTransactionManager.setTransactionTimeout(10000);
         CustomJtaPlatform.setUserTransaction(bitronixTransactionManager);
         CustomJtaPlatform.setTransactionManager(bitronixTransactionManager);
-        //refactorsss
         return bitronixTransactionManager;
     }
     /**

@@ -1,6 +1,5 @@
 package com.example.demo.Mail;
 
-import bitronix.tm.BitronixTransactionManager;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 

@@ -1,16 +1,9 @@
 package com.example.demo.Controllers;
 
-import com.example.demo.DataBase.UsersDB.User;
-import com.example.demo.DataBase.UsersDB.UsersRepository;
 import com.example.demo.Services.Implementations.UserServiceImpl;
-import com.example.demo.security.JwtTokenProvider;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

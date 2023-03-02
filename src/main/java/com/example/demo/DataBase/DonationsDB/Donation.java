@@ -2,11 +2,8 @@ package com.example.demo.DataBase.DonationsDB;
 
 import com.example.demo.DataBase.ProjectsDB.Project;
 import com.example.demo.DataBase.UsersDB.User;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.UUID;
 
 /**
  * Модель данных донатов.

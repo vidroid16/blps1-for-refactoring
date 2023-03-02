@@ -2,11 +2,8 @@ package com.example.demo.Services.Implementations;
 
 import com.example.demo.DataBase.UsersDB.User;
 import com.example.demo.DataBase.UsersDB.UsersRepository;
-import com.example.demo.Mail.MailSender;
 import com.example.demo.Services.UserService;
 import com.example.demo.security.JwtTokenProvider;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
@@ -16,10 +13,6 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
-
-import javax.mail.Session;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Классс сервис для авторизации пользователей

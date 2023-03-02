@@ -1,12 +1,9 @@
 package com.example.demo.Controllers;
 
 import com.example.demo.DataBase.ProjectsDB.Project;
-import com.example.demo.DataBase.ProjectsDB.ProjectRepository;
 import com.example.demo.DataBase.UsersDB.User;
 import com.example.demo.DataBase.UsersDB.UsersRepository;
 import com.example.demo.Services.Implementations.DataServiceImpl;
-import com.example.demo.Services.DataService;
-import com.example.demo.Services.UserService;
 import com.example.demo.socket.SocketMessage;
 import io.swagger.v3.oas.annotations.Operation;
 import org.json.JSONArray;
@@ -14,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 

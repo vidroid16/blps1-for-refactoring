@@ -1,16 +1,10 @@
 package com.example.demo.DataBase.UsersDB;
 
-
-import com.example.demo.DataBase.ProjectsDB.Project;
 import com.example.demo.security.models.Role;
 import com.example.demo.security.models.Status;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
-
 
 /**
  * Модель данных пользователей.

@@ -1,6 +1,5 @@
 package com.example.demo.DataBase.UsersDB;
 
-import com.example.demo.DataBase.ProjectsDB.Project;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 

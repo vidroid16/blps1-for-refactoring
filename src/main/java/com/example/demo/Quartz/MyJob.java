@@ -1,7 +1,6 @@
 package com.example.demo.Quartz;
 
 import com.example.demo.Services.Implementations.TestServiceImpl;
-import com.example.demo.Services.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;

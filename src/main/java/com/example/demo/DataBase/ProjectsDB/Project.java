@@ -1,10 +1,6 @@
 package com.example.demo.DataBase.ProjectsDB;
 
-import com.example.demo.DataBase.UsersDB.User;
-
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Модель данных проектов.
